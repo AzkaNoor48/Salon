@@ -1,0 +1,150 @@
+.ratings {
+    font-family: Arial;
+    /* Center website */
+    max-width: 500px; /* Max width */
+    padding: 20px;
+    
+  }
+
+  .fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top:10px;
+  }
+  
+  .middle {
+    margin-top:10px;
+    float: left;
+    width: 70%;
+  }
+  
+  /* Place text to the right */
+  .right {
+    text-align: left;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 95%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+    
+  }
+  
+  /* Individual bars */
+  .bar-5 { height: 15px; background-color: #ff9800;}
+  .bar-4 { height: 15px; background-color: #ff9800;}
+  .bar-3 { height: 15px; background-color: #ff9800;}
+  .bar-2 { height: 15px; background-color: #ff9800;}
+  .bar-1 { height: 15px; background-color: #ff9800;}
+  
+  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+  @media (max-width: 400px) {
+    .side, .middle {
+      width: 70%;
+    }
+    .right {
+      display: none;
+    }
+    
+  }
+  div.scroll {
+    height: 500px;
+    text-align: justify;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+  }
+
+  
+
+  .review-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px;
+	border-radius:3px;
+  margin-bottom:15px;
+  width: 700px;
+}
+.review-block-img{
+	margin-left:10px;
+	border-radius:15px;
+}
+.review-block-name{
+	font-size:20px;
+	margin-left:10px;
+	color:#552882;
+}
+
+.review-block-date{
+    font-size:14px;
+    color: #6E6E6E;
+	margin-left:10px;
+	
+}
+
+.review-block-description{
+	font-size:15px;
+    margin-left:10px;
+    color:black;
+	margin-top:10px;
+}
+.child2
+{
+  margin-left: -350px;
+}
+.review-block-rate
+{
+  margin-left: 400px;
+}
+.fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  .flex-container {
+    display: flex;
+}
+@media (max-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .ratings {
+    width: auto;
+  }
+  .child2
+  {
+    margin-left: 0px;
+  }
+  .review-block-rate
+  {
+    margin-left: 22px;
+  }
+  .review-block{
+    width: auto;
+  }
+}
+
+.flex-child {
+    flex: 1;
+}
+

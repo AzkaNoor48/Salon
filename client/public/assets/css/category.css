@@ -1,0 +1,57 @@
+/*  
+Author: WebThemez.com
+License: https://webthemez.com/license 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+.h1, .h2, .h3, .h4, .h5, .h6, .h7,
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.6;
+  font-weight:600;
+}
+
+.bg-primary{
+	color:black !important;
+	background-color:#F8EFFB !important;
+}
+.categ-card-body {
+    background-color: transparent;
+}
+.categ-card-body h5{
+	margin-top: 15px;
+	margin-left: 15px;
+	font-size:24px;
+	color: #f150bf;
+}
+.categ-card{
+	margin-top: 5vh;
+		border: 1px solid #BDBDBD;
+		border-radius: 15px;
+	    background: transparent;
+}
+.categ-card-body p{
+	margin-left: 17px;
+	
+  color: #848484;
+	font-size:18px;
+}
+.categ-card-body span{
+	font-size:18px;
+	
+}
+.bg-dark {
+    background-color: #552882 !important;
+}
+.categ-card-img-top
+{
+	border-radius: 15px 15px 0px 0px;
+	height: 250px;
+	width: 335px;
+
+}
+a:hover {
+	text-decoration: none;
+  }
+

@@ -1,0 +1,42 @@
+header {
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(255, 192, 250, 0.486);
+}
+
+.service-container {
+  text-align: center;
+  width: 250px;
+  max-width: 250px;
+  float: left;
+  margin: 20px;
+  /* border: 3px solid #ba26df; */
+  background-color: blanchedalmond;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.service-heading {
+  text-align: center;
+}
+
+button {
+  background-color: white;
+  border: 2px solid #f150bf;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 11px;
+  border-radius: 20px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #f150bf;
+  color: white;
+}
+
+button:active {
+  background-color: #f150bf;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

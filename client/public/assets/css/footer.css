@@ -1,0 +1,257 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*{
+	padding:0;
+	margin:0;
+}
+
+/* The footer is fixed to the bottom of the page */
+
+footer{
+	position: fixed;
+	bottom: 0;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+}
+
+
+.footer-distributed{
+	background-color: #180729;
+	box-sizing: border-box;
+	width: 100%;
+	height: 350px;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 30px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 25%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+	padding: 10px;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #490bf9;
+	color: #ffffff;
+	font-size: 25px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 7px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+	font-size:15px;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #ffffff;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-center .fa{
+	padding: 10px;
+	font-size: 40px;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 15px;
+	border-radius: 50%;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 35%;
+	padding-top: 20px;
+}
+
+/* .footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+} */
+
+.footer-distributed .footer-icons{
+	margin-top: 30px;
+}
+
+.footer-distributed .footer-right .fa {
+	padding: 10px;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 15px;
+	border-radius: 50%;
+  }
+  
+  .fa:hover {
+	  opacity: 0.7;
+  }
+
+  .fa-facebook {
+	background: #3B5998;
+	color: white;
+  }
+  
+  .fa-twitter {
+	background: #55ACEE;
+	color: white;
+  }
+
+  .fa-youtube {
+	background: #bb0000;
+	color: white;
+  }
+  
+  .fa-instagram {
+	background: #E1306C;
+	color: white;
+  }
+
+  .flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-distributed .footer-right p{
+	padding-top: 7px;
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+	font-size:25px;
+}
+
+/* .app-btn {
+	width: 45%;
+	max-width: 160px;
+	color: #fff;
+	margin: 20px 10px;
+	text-align: left;
+	border-radius: 5px;
+	text-decoration: none;
+	font-family: "Lucida Grande", sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+.app-btn.blu {
+	background-color: #101010;
+	transition: background-color 0.25s linear;
+}
+.app-btn.blu:hover {
+	background-color: #454545;
+}
+.app-btn i {
+	width: 20%;
+	text-align: center;
+	font-size: 28px;
+	margin-right: 7px;
+}
+.app-btn .big-txt {
+	font-size: 17px;
+	text-transform: capitalize;
+} */
+
+   
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
