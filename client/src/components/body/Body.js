@@ -37,7 +37,7 @@ function Body() {
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />
 
                 <Route path="/forgot_password" component={isLogged ? NotFound : ForgotPass} exact />
-                <Route path="/user/reset/:token" component={isLogged ? NotFound : ResetPass} exact />
+              
 
                 <Route path="/user/activate/:activation_token" component={ActivationEmail} exact />
 
@@ -49,7 +49,7 @@ function Body() {
           <Route path="/payment" exact component={() => <PaymentForm />} />
           <Route path="/categpage" exact component={() => <Categorypage />} />
           <Route path="/serviceprovider" exact component={() => <ServiceProvider />}  />
-        
+          <Route path="/user/reset/:token" component={isLogged ? NotFound : ResetPass} exact />
 
             </Switch>
         </section>

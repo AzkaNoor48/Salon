@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import {isEmail} from '../../utils/validation/Validation'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
+import Nav from "./Nav";
 
 const initialState = {
     email: '',
@@ -33,18 +34,33 @@ function ForgotPassword() {
     }
     
     return (
-        <div className="fg_pass">
-            <h2>Forgot Your Password?</h2>
+        <div >
+           
 
-            <div className="row">
+            <div >
                 {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
-
-                <label htmlFor="email">Enter your email address</label>
-                <input type="email" name="email" id="email" value={email}
+                <link rel="stylesheet" type="text/css" href="assets/css/form1.css"></link>
+    <header id="top">
+    <Nav />
+    </header>
+       <div className="wrapper">
+        <div className="inner">
+          <div className="image-holder">
+            <img src="assets/img/login/registration-form-4.jpg" height="450px" alt="" />
+          </div>
+         <br></br>
+         <br></br>   <br></br>   <br></br>   <br></br>   <br></br>   <br></br>   <br></br>
+            <div className="form-holder ">
+                <label htmlFor="email" ></label>
+                <input type="email"   className="form-control" placeholder="Enter your e-mail address"name="email" id="email" value={email}
                 onChange={handleChangeInput} />
-                <button onClick={forgotPassword}>Verify your email</button>
+                <button onClick={forgotPassword}>Verify</button>
+                </div>
+                
             </div>
+        </div>
+        </div>
         </div>
     )
 }

@@ -1,6 +1,41 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import {useSelector} from 'react-redux'
+import axios from 'axios'
+
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+
 function Nav() {
+
+  const auth = useSelector(state => state.auth)
+
+  const {user, isLogged} = auth
+  
+  
+  const handleLogout = async () => {
+      try {
+          await axios.get('/user/logout')
+          localStorage.removeItem('firstLogin')
+          window.location.href = "/";
+      } catch (err) {
+          window.location.href = "/";
+      }
+  }
+  
+  const userLink = () => {
+      return <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/profile">Profile</Link>
+              <li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/" onClick={handleLogout}>Logout</Link></li>
+          
+              </li>
+  }
+  
+  
+  const transForm = {
+    transform: isLogged ? "translateY(-5px)" : 0
+  }
+  
+
   return (
     <>
       <link rel="stylesheet" href="assets/css/scrolling-nav.css" />
@@ -45,13 +80,9 @@ function Nav() {
                   Features
                 </a>
               </li>
+              
               <li className="nav-item">
-                <Link className="nav-link js-scroll-trigger" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="/signup">
+                <a className="nav-link js-scroll-trigger" href="/register">
                   Signup
                 </a>
               </li>
@@ -60,11 +91,16 @@ function Nav() {
                   Contact
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="/payment">
-                  Payment
-                </a>
-              </li>
+              
+              <li style={transForm}>
+               
+                {
+                    isLogged
+                    ? userLink()
+                    :<li className="nav-item"><Link className="nav-link js-scroll-trigger" to="/login"><i className="fas fa-user"></i> Sign in</Link></li>
+                }
+                
+            </li>
             </ul>
           </div>
         </div>

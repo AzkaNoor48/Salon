@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {isLength, isMatch} from '../../utils/validation/Validation'
 import {showSuccessMsg, showErrMsg} from '../../utils/notification/Notification'
 import {fetchAllUsers, dispatchGetAllUsers} from '../../../redux/actions/usersAction'
+import Nav from "./Nav";
 
 const initialState = {
     name: '',
@@ -21,6 +22,7 @@ function Profile() {
     const users = useSelector(state => state.users)
 
     const {user, isAdmin} = auth
+    console.log(users)
     const [data, setData] = useState(initialState)
     const {name, password, cf_password, err, success} = data
 
@@ -43,40 +45,40 @@ function Profile() {
         setData({...data, [name]:value, err:'', success: ''})
     }
 
-    const changeAvatar = async(e) => {
-        e.preventDefault()
-        try {
-            const file = e.target.files[0]
+    // const changeAvatar = async(e) => {
+    //     e.preventDefault()
+    //     try {
+    //         const file = e.target.files[0]
 
-            if(!file) return setData({...data, err: "No files were uploaded." , success: ''})
+    //         if(!file) return setData({...data, err: "No files were uploaded." , success: ''})
 
-            if(file.size > 1024 * 1024)
-                return setData({...data, err: "Size too large." , success: ''})
+    //         if(file.size > 1024 * 1024)
+    //             return setData({...data, err: "Size too large." , success: ''})
 
-            if(file.type !== 'image/jpeg' && file.type !== 'image/png')
-                return setData({...data, err: "File format is incorrect." , success: ''})
+    //         if(file.type !== 'image/jpeg' && file.type !== 'image/png')
+    //             return setData({...data, err: "File format is incorrect." , success: ''})
 
-            let formData =  new FormData()
-            formData.append('file', file)
+    //         let formData =  new FormData()
+    //         formData.append('file', file)
 
-            setLoading(true)
-            const res = await axios.post('/api/upload_avatar', formData, {
-                headers: {'content-type': 'multipart/form-data', Authorization: token}
-            })
+    //         setLoading(true)
+    //         const res = await axios.post('/api/upload_avatar', formData, {
+    //             headers: {'content-type': 'multipart/form-data', Authorization: token}
+    //         })
 
-            setLoading(false)
-            setAvatar(res.data.url)
+    //         setLoading(false)
+    //         setAvatar(res.data.url)
             
-        } catch (err) {
-            setData({...data, err: err.response.data.msg , success: ''})
-        }
-    }
+    //     } catch (err) {
+    //         setData({...data, err: err.response.data.msg , success: ''})
+    //     }
+    // }
 
     const updateInfor = () => {
         try {
             axios.patch('/user/update', {
                 name: name ? name : user.name,
-                avatar: avatar ? avatar : user.avatar
+               // avatar: avatar ? avatar : user.avatar
             },{
                 headers: {Authorization: token}
             })
@@ -134,11 +136,24 @@ function Profile() {
             {err && showErrMsg(err)}
             {success && showSuccessMsg(success)}
             {loading && <h3>Loading.....</h3>}
+            <link rel="stylesheet" type="text/css" href="assets/css/profile.css"></link>
         </div>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css"></link>
+    <header id="top">
+    <Nav />
+    </header>
+       <div className="wrapper">
+        <div className="inner">
+        
+          <div className="image-holder">
+            <img src="assets/img/login/registration-form-4.jpg" height="450px" alt="" />
+          </div>
+          <br></br>
+         
         <div className="profile_page">
             <div className="col-left">
                 <h2>{isAdmin ? "Admin Profile": "User Profile"}</h2>
-
+{/* 
                 <div className="avatar">
                     <img src={avatar ? avatar : user.avatar} alt=""/>
                     <span>
@@ -146,46 +161,53 @@ function Profile() {
                         <p>Change</p>
                         <input type="file" name="file" id="file_up" onChange={changeAvatar} />
                     </span>
-                </div>
-
-                <div className="form-group">
+                </div> */}
+                
+                <div className="form-holder">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" defaultValue={user.name}
-                    placeholder="Your name" onChange={handleChange} />
+                    <input type="text" name="name" className="form-control" id="name" defaultValue={user.name}
+                     onChange={handleChange} />
                 </div>
 
-                <div className="form-group">
+                <div className="form-holder">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" defaultValue={user.email}
-                    placeholder="Your email address" disabled />
+                    <input type="email" name="email"  className="form-control" id="email" defaultValue={user.email}
+                    disabled />
                 </div>
 
-                <div className="form-group">
+                <div className="form-holder">
                     <label htmlFor="password">New Password</label>
-                    <input type="password" name="password" id="password"
-                    placeholder="Your password" value={password} onChange={handleChange} />
+                    <input type="password"  className="form-control" name="password" id="password"
+                     value={password} onChange={handleChange} />
                 </div>
 
-                <div className="form-group">
+                <div className="form-holder">
                     <label htmlFor="cf_password">Confirm New Password</label>
-                    <input type="password" name="cf_password" id="cf_password"
-                    placeholder="Confirm password" value={cf_password} onChange={handleChange} />
+                    <input type="password" className="form-control" name="cf_password" id="cf_password"
+                    value={cf_password} onChange={handleChange} />
                 </div>
 
-                <div>
+                {/* <div>
                     <em style={{color: "crimson"}}> 
                     * If you update your password here, you will not be able 
                         to login quickly using google and facebook.
                     </em>
-                </div>
+                </div> */}
 
                 <button disabled={loading} onClick={handleUpdate}>Update</button>
+                {/* <Link to={`/edit_user/${user._id}`}>
+                                                <button className="fas fa-edit" title="Edit">Edit</button>
+                                            </Link>
+                                            <button className="fas fa-trash-alt" title="Remove"
+                                            onClick={() => handleDelete(user._id)} >Delete</button> */}
+            
+           
+              {/* <div className="col-right">
+                <h2>{isAdmin ? "Users" : "My Bookings"}</h2>
+
+               
             </div>
-
-            <div className="col-right">
-                <h2>{isAdmin ? "Users" : "My Orders"}</h2>
-
-                <div style={{overflowX: "auto"}}>
+            <div style={{overflowX: "auto"}}>
                     <table className="customers">
                         <thead>
                             <tr>
@@ -222,8 +244,12 @@ function Profile() {
                             }
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div>  */}
+        </div>
+        
+        </div>
+        
+        </div>
         </div>
         </>
     )

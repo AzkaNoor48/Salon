@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux'
 //import { GoogleLogin } from 'react-google-login';
 //import FacebookLogin from 'react-facebook-login';
 import Nav from "./Nav";
-
+//import "../../../../public/assets/css/form1.css"
 
 const initialState = {
     email: '',
@@ -79,7 +79,7 @@ function Login() {
 
     return (
         <div className="login_page">
-            <h2>Login</h2>
+            
             {err && showErrMsg(err)}
             {success && showSuccessMsg(success)}
 
@@ -98,9 +98,7 @@ function Login() {
             <h3>Sign In</h3>
             <div className="form-holder active">
               <input type="text" placeholder="e-mail" className="form-control" id="email"
-                    value={email} name="email" onChange={handleChangeInput}
-                  
-              />
+                    value={email} name="email" onChange={handleChangeInput}/>
             </div>
             <div className="form-holder">
               <input type="password" placeholder="Password" className="form-control" style={{fontSize: '15px'}} 
@@ -108,25 +106,25 @@ function Login() {
               />
             </div>
             <div className="row">
-                    <button type="submit">Login</button>
+                    <button type="submit">Login</button><br></br>
                     <Link to="/forgot_password">Forgot your password?</Link>
                 </div>
             <div className="form-login">
-              <button>Login</button>
-              <p>Don't Have an Account? <Link to="/Register"></Link></p>
+              
+              <p>Don't Have an Account? <Link to="/register">Signup</Link></p>
             </div>
           </form>
         </div>
       </div>
     
 
-            <div className="hr">Or Login With</div>
+            
 
-            <div className="social">
+            <div >
                 {/* <GoogleLogin
                     clientId="1096165373598-60tqjh23500p6jui94cd1bk4n987uk86.apps.googleusercontent.com"
                     buttonText="Login with google"
-                    onSuccess={responseGoogle}
+                    onSuccess={responseGoogle} <div className="hr">Or Login With</div>
                     cookiePolicy={'single_host_origin'}
                 /> */}
                 
@@ -134,12 +132,12 @@ function Login() {
                 appId="Your facebook app id"
                 autoLoad={false}
                 fields="name,email,picture"
-                callback={responseFacebook} 
+                callback={responseFacebook}  <p>New Customer? <Link to="/register">Register</Link></p>
                 /> */}
 
             </div>
 
-            <p>New Customer? <Link to="/register">Register</Link></p>
+            
         </div>
     )
 }

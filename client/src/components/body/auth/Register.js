@@ -68,7 +68,7 @@ function Register() {
             <img src="assets/img/login/registration-form-4.jpg" alt="" />
           </div>
           <form onSubmit={handleSubmit}>
-            <h3>Sign Up</h3>
+        
             <div className="form-holder active">
               <input type="text" placeholder="name" className="form-control"id="name"
                     value={name} name="name" onChange={handleChangeInput}
@@ -89,12 +89,12 @@ function Register() {
                     </div>
             <div className="checkbox">
               <label>
-                <input type="checkbox" defaultChecked /> I agree all statement in Terms &amp; Conditions
+                <input type="checkbox" defaultChecked required /> I agree all statement in Terms &amp; Conditions
                 <span className="checkmark" />
               </label>
             </div>
             <div className="form-login">
-              <button>Sign up</button>
+              <button type="submit">Sign up</button>
               <p>Already an account? <Link to="/login">Login</Link></p>
             </div>
           </form>

@@ -3,7 +3,9 @@ import axios from 'axios'
 import {useParams} from 'react-router-dom'
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import {isLength, isMatch} from '../../utils/validation/Validation'
-
+import Nav from "../Nav"
+import  "./reset.css"
+//import  "./footer.css"
 
 const initialState = {
     password: '',
@@ -46,24 +48,49 @@ function ResetPassword() {
 
 
     return (
-        <div className="fg_pass">
-            <h2>Reset Your Password</h2>
 
-            <div className="row">
+
+
+        
+        <div > 
+        
+  
+            <h2>Reset Your Password</h2>
+            
+
+            <div>
                 {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
 
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" id="password" value={password}
+                
+           
+            
+                <header id="top">
+    <Nav />
+    </header>
+    
+       <div className="wrapper">
+        <div className="inner">
+          
+       
+   
+          <div className="form-holder">
+                <label  htmlFor="password">Password</label>
+                <input type="password" className="form-control" name="password" id="password" value={password}
                 onChange={handleChangeInput} />
-
+                </div><br></br>
+         <div className="form-holder">
                 <label htmlFor="cf_password">Confirm Password</label>
-                <input type="password" name="cf_password" id="cf_password" value={cf_password}
+                <input type="password" className="form-control" name="cf_password" id="cf_password" value={cf_password}
                 onChange={handleChangeInput} />         
-
-                <button onClick={handleResetPass}>Reset Password</button>
+   <br></br>   <br></br>
+                <button onClick={handleResetPass}>Reset </button>
+            </div>
+            
             </div>
         </div>
+        </div>
+       </div>
     )
 }
 

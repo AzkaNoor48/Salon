@@ -1,11 +1,11 @@
 import React from 'react';        // Footer.jsx
-
+import  "../../components/body/auth/footer.css"
 function Footer ()
 {
   return(
   <>
 
-<link rel="stylesheet" type="text/css" href="assets/css/Footer.css" />
+{/* <link rel="stylesheet" type="text/css" href="assets/css/Footer.css" /> */}
 {/*For icons*/}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 

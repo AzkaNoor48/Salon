@@ -3,7 +3,7 @@ import {useParams, useHistory} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 import {showSuccessMsg, showErrMsg} from '../../utils/notification/Notification'
-
+import Nav from "./Nav";
 
 function EditUser() {
     const {id} = useParams()
@@ -56,7 +56,9 @@ function EditUser() {
     }
 
     return (
+       
         <div className="profile_page edit_user">
+
             <div className="row">
                 <button onClick={() => history.goBack()} className="go_back">
                     <i className="fas fa-long-arrow-alt-left"></i> Go Back
@@ -65,19 +67,31 @@ function EditUser() {
 
             <div className="col-left">
                 <h2>Edit User</h2>
+                <link rel="stylesheet" type="text/css" href="assets/css/reset.css"></link>
+        <header id="top">
+        <Nav />
+        </header>
+           <div className="wrapper">
+            <div className="inner">
+              <div className="image-holder">
+                <img src="assets/img/login/registration-form-4.jpg" height="450px" alt="" />
+              </div>
+              <br></br>
+             <br></br>   <br></br>   <br></br>   <br></br>   <br></br>   <br></br>   <br></br>
+             
 
-                <div className="form-group">
+                <div  className="form-holder">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" defaultValue={editUser.name} disabled/>
+                    <input type="text" name="name" className="form-control" defaultValue={editUser.name} disabled/>
                 </div>
 
-                <div className="form-group">
+                <div  className="form-holder">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" defaultValue={editUser.email} disabled />
+                    <input type="email" name="email" className="form-control" defaultValue={editUser.email} disabled />
                 </div>
 
-                <div className="form-group">
-                    <input type="checkbox" id="isAdmin" checked={checkAdmin}
+                <div  className="form-holder">
+                    <input type="checkbox" id="isAdmin " className="form-control" checked={checkAdmin}
                     onChange={handleCheck} />
                     <label htmlFor="isAdmin">isAdmin</label>
                 </div>
@@ -87,6 +101,8 @@ function EditUser() {
                 {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
             </div>
+        </div>
+        </div>
         </div>
     )
 }
